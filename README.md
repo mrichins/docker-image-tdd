@@ -30,3 +30,12 @@
 2. Now that we have a failing test we need to figure out how to install node onto this box. There are thousands of resources online, but we can actually drive this ourself =>
 First build the image `$ docker build . -t tdd`
 Then exec into it `docker run -it --entrypoint=/bin/bash tdd`
+
+### Lets actually get this node server running
+
+1. First of all, lets make a test that will check if something is listening on a certain port. For resources available to serverspec, check out the documentation on resource types: http://serverspec.org/resource_types.html
+2. Now that we have a failing test, lets make it pass by installing our dependencies and running our app.
+
+### How about refactoring?
+
+1. That Ubuntu image is TOO heavy, it has a whole bunch of things we dont need, and it takes a long time to download. I want to use a new docker base image to run this correctly.
