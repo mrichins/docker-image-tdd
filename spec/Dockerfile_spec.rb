@@ -8,7 +8,7 @@ describe "Dockerfile" do
   set :backend, :docker
   set :docker_image, image.id
 
-  it "has a passing test" do
-    expect(true).to eq(true)
+  it "has node installed" do
+    expect(package('nodejs')).to be_installed
   end
 end

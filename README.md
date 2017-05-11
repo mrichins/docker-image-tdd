@@ -18,3 +18,15 @@
 1. create a new spec folder and add set up building the docker image and run a test that should normally pass
 2. run your tests with `$rspec spec/` ...
 3. and watch it fail
+
+### So lets make it pass
+
+1. since we're deploying a node server, lets use an ubuntu image from dockerhub, but honestly almost any linux distribution would work.
+2. re-run the tests and notice that our original test is GREEN!!!!
+
+### And now lets add to our tests to check something significant
+
+1. Lets test that we have our node dependency by adding a test that expects node to be installed
+2. Now that we have a failing test we need to figure out how to install node onto this box. There are thousands of resources online, but we can actually drive this ourself =>
+First build the image `$ docker build . -t tdd`
+Then exec into it `docker run -it --entrypoint=/bin/bash tdd`
